@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Foundry Web Lab | Web Design &amp; Development — Connecticut</title>
+<meta name="description" content="Foundry Web Lab designs and builds websites that turn visitors into customers. Web design, development, branding, and SEO — based in Connecticut, working with clients everywhere.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a href="#home" class="brand">
+      <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+        <polygon points="20,3 35,11 35,29 20,37 5,29 5,11" fill="none" stroke="currentColor" stroke-width="2"/>
+        <path d="M20 14 L26 20 L20 26 L14 20 Z" fill="currentColor"/>
+      </svg>
+      <span class="brand-text">Foundry<span class="brand-text-accent">Web Lab</span></span>
+    </a>
+
+    <nav class="main-nav" id="main-nav">
+      <a href="#home">Home</a>
+      <a href="#work">Work</a>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <a href="#contact" class="btn btn-accent header-cta">Start a Project</a>
+
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="main-nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <!-- ============ HOME / HERO ============ -->
+  <section class="hero" id="home">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="wrap hero-inner">
+      <div class="hero-copy">
+        <p class="eyebrow">Web Design &amp; Development &middot; Connecticut, USA</p>
+        <h1>Websites that turn <span class="text-accent-teal">visitors</span> into <span class="text-accent-orange">customers.</span></h1>
+        <p class="hero-sub">I design and build fast, clear, conversion-focused websites for small businesses — then help you understand exactly why every decision was made.</p>
+        <div class="hero-actions">
+          <a href="#work" class="btn btn-accent btn-large">View My Work</a>
+          <a href="#contact" class="btn btn-outline btn-large">Start a Project</a>
+        </div>
+        <div class="hero-value-row">
+          <span class="value-chip">Design + Development + SEO</span>
+          <span class="value-chip">STEM educator background</span>
+          <span class="value-chip">Connecticut-based, remote friendly</span>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <div class="browser-mock browser-mock-back"></div>
+        <div class="browser-mock browser-mock-front">
+          <div class="browser-chrome">
+            <span></span><span></span><span></span>
+            <div class="browser-address">foundryweblab.com</div>
+          </div>
+          <div class="browser-body">
+            <div class="mock-block mock-block-wide"></div>
+            <div class="mock-block-row">
+              <div class="mock-block"></div>
+              <div class="mock-block"></div>
+              <div class="mock-block"></div>
+            </div>
+            <div class="mock-block mock-block-wide mock-block-short"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WORK / PORTFOLIO ============ -->
+  <section class="section" id="work">
+    <div class="wrap">
+      <p class="eyebrow eyebrow-center">Selected Work</p>
+      <h2 class="section-title">Projects I've Built</h2>
+      <p class="section-sub">A few examples of recent work. <em>(Placeholder projects shown below — swap in your own screenshots and case studies.)</em></p>
+
+      <div class="portfolio-grid">
+
+        <article class="portfolio-card">
+          <div class="portfolio-thumb portfolio-thumb-1">
+            <div class="browser-chrome browser-chrome-small"><span></span><span></span><span></span></div>
+          </div>
+          <div class="portfolio-body">
+            <p class="portfolio-tag">Restaurant &middot; Booking Site</p>
+            <h3>Placeholder Project One</h3>
+            <p>Full redesign with online reservations and a mobile-first menu experience.</p>
+            <a href="#" class="text-link">View project &rarr;</a>
+          </div>
+        </article>
+
+        <article class="portfolio-card">
+          <div class="portfolio-thumb portfolio-thumb-2">
+            <div class="browser-chrome browser-chrome-small"><span></span><span></span><span></span></div>
+          </div>
+          <div class="portfolio-body">
+            <p class="portfolio-tag">Local Service &middot; Lead Generation</p>
+            <h3>Placeholder Project Two</h3>
+            <p>Landing page built to convert local search traffic into booked estimates.</p>
+            <a href="#" class="text-link">View project &rarr;</a>
+          </div>
+        </article>
+
+        <article class="portfolio-card">
+          <div class="portfolio-thumb portfolio-thumb-3">
+            <div class="browser-chrome browser-chrome-small"><span></span><span></span><span></span></div>
+          </div>
+          <div class="portfolio-body">
+            <p class="portfolio-tag">Retail &middot; E-commerce</p>
+            <h3>Placeholder Project Three</h3>
+            <p>Small-batch storefront with a custom product filtering experience.</p>
+            <a href="#" class="text-link">View project &rarr;</a>
+          </div>
+        </article>
+
+        <article class="portfolio-card">
+          <div class="portfolio-thumb portfolio-thumb-4">
+            <div class="browser-chrome browser-chrome-small"><span></span><span></span><span></span></div>
+          </div>
+          <div class="portfolio-body">
+            <p class="portfolio-tag">Nonprofit &middot; Brand Refresh</p>
+            <h3>Placeholder Project Four</h3>
+            <p>New brand identity and site to support a growing donor base.</p>
+            <a href="#" class="text-link">View project &rarr;</a>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- TESTIMONIALS -->
+      <div class="testimonial-grid">
+        <blockquote class="testimonial-card">
+          <span class="quote-mark" aria-hidden="true">&ldquo;</span>
+          <p>Our new site loads instantly and actually explains what we do. Bookings are up since it launched.</p>
+          <footer>&mdash; Placeholder Client, Restaurant Owner</footer>
+        </blockquote>
+        <blockquote class="testimonial-card">
+          <span class="quote-mark" aria-hidden="true">&ldquo;</span>
+          <p>Took the time to explain every choice in plain language — never felt like I was being sold jargon.</p>
+          <footer>&mdash; Placeholder Client, Small Business Owner</footer>
+        </blockquote>
+        <blockquote class="testimonial-card">
+          <span class="quote-mark" aria-hidden="true">&ldquo;</span>
+          <p>We went from an outdated site to something that actually reflects our brand. Traffic and inquiries both climbed.</p>
+          <footer>&mdash; Placeholder Client, Nonprofit Director</footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SERVICES ============ -->
+  <section class="section section-tinted" id="services">
+    <div class="wrap">
+      <p class="eyebrow eyebrow-center">What I Offer</p>
+      <h2 class="section-title">Services</h2>
+
+      <div class="services-grid">
+
+        <article class="service-card">
+          <svg class="service-icon" viewBox="0 0 40 40" aria-hidden="true"><rect x="5" y="7" width="30" height="26" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M5 14h30" stroke="currentColor" stroke-width="2"/><circle cx="10" cy="10.5" r="1.2" fill="currentColor"/><circle cx="14" cy="10.5" r="1.2" fill="currentColor"/></svg>
+          <h3>Web Design</h3>
+          <p>Custom, mobile-first designs built around how your customers actually browse and decide.</p>
+        </article>
+
+        <article class="service-card">
+          <svg class="service-icon" viewBox="0 0 40 40" aria-hidden="true"><path d="M13 12 L5 20 L13 28M27 12 L35 20 L27 28M23 8 L17 32" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <h3>Web Development</h3>
+          <p>Clean, fast, maintainable code — from a simple static site to a fully custom build.</p>
+        </article>
+
+        <article class="service-card">
+          <svg class="service-icon" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="14" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 20h24M20 6a20 20 0 0 1 0 28 20 20 0 0 1 0-28z" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+          <h3>SEO &amp; Traffic Growth</h3>
+          <p>On-page SEO, site speed, and structure that help the right people find you on search.</p>
+        </article>
+
+        <article class="service-card">
+          <svg class="service-icon" viewBox="0 0 40 40" aria-hidden="true"><rect x="6" y="6" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="28" cy="12" r="6" fill="none" stroke="currentColor" stroke-width="2"/><polygon points="12,22 20,34 4,34" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+          <h3>Branding &amp; Graphic Design</h3>
+          <p>Logos, color systems, and visual identity that make your brand feel consistent everywhere.</p>
+        </article>
+
+        <article class="service-card">
+          <svg class="service-icon" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 6a6 6 0 0 1 6 6v3a6 6 0 0 1-12 0v-3a6 6 0 0 1 6-6z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M10 19v2a10 10 0 0 0 20 0v-2M20 31v5M14 36h12" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+          <h3>Website Maintenance</h3>
+          <p>Ongoing updates, backups, and small fixes so your site stays fast and secure long-term.</p>
+        </article>
+
+        <article class="service-card">
+          <svg class="service-icon" viewBox="0 0 40 40" aria-hidden="true"><path d="M6 30 L16 16 L22 22 L34 8" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M26 8h8v8" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <h3>Conversion Optimization</h3>
+          <p>Landing pages and page layouts tuned to turn more visits into calls, bookings, and sales.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="section" id="about">
+    <div class="wrap about-grid">
+      <div class="about-portrait" aria-hidden="true">
+        <svg viewBox="0 0 200 240">
+          <rect x="4" y="4" width="192" height="232" rx="4" fill="none" stroke="currentColor" stroke-width="2"/>
+          <circle cx="100" cy="90" r="42" fill="none" stroke="currentColor" stroke-width="2"/>
+          <path d="M40 210c8-40 40-62 60-62s52 22 60 62" fill="none" stroke="currentColor" stroke-width="2"/>
+        </svg>
+        <p class="portrait-caption">Photo coming soon</p>
+      </div>
+
+      <div class="about-copy">
+        <p class="eyebrow">About Me</p>
+        <h2 class="section-title">From the Classroom to the Console</h2>
+        <p>I'm the founder of Foundry Web Lab, and before that, I spent years as a STEM educator — teaching students how to break big, complicated problems into small, understandable pieces. That's exactly the skill I bring to web design.</p>
+        <p>I build websites the same way I used to build lesson plans: start with the goal, strip out anything that gets in the way, and explain every decision in plain language instead of jargon. My background in graphic design and front-end development means I handle the look, the code, and the strategy behind it — so you're not stuck coordinating three different vendors.</p>
+        <p>My focus is simple: help small businesses build a stronger online presence and turn that presence into real traffic, real leads, and real customers.</p>
+
+        <div class="badge-row">
+          <span class="badge">HTML / CSS / JavaScript</span>
+          <span class="badge">React</span>
+          <span class="badge">Figma &amp; Adobe Suite</span>
+          <span class="badge">SEO Fundamentals</span>
+          <span class="badge">Google Analytics</span>
+          <span class="badge">Clear Communication</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="section section-tinted" id="contact">
+    <div class="wrap contact-grid">
+      <div class="contact-form-wrap">
+        <p class="eyebrow">Let's Talk</p>
+        <h2 class="section-title">Start a Project</h2>
+        <p class="contact-intro">Tell me a bit about your business and what you're looking for. I'll follow up within a day or two.</p>
+
+        <form id="quote-form" novalidate>
+          <div class="form-row form-row-split">
+            <div>
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <div>
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+          </div>
+          <div class="form-row form-row-split">
+            <div>
+              <label for="business">Business Name</label>
+              <input type="text" id="business" name="business">
+            </div>
+            <div>
+              <label for="project-type">Project Type</label>
+              <select id="project-type" name="project-type">
+                <option>New Website</option>
+                <option>Website Redesign</option>
+                <option>Branding &amp; Graphic Design</option>
+                <option>SEO / Traffic Growth</option>
+                <option>Ongoing Maintenance</option>
+                <option>Not Sure Yet</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <label for="message">Tell me about your project</label>
+            <textarea id="message" name="message" rows="4"></textarea>
+          </div>
+          <button type="submit" class="btn btn-accent btn-large">Send Message</button>
+          <p class="form-note" id="form-note" role="status"></p>
+        </form>
+      </div>
+
+      <aside class="contact-card">
+        <div class="contact-card-top">
+          <p class="eyebrow eyebrow-on-dark">Get In Touch</p>
+          <a href="mailto:hello@foundryweblab.com" class="contact-email">hello@foundryweblab.com</a>
+          <a href="tel:+18605550199" class="contact-phone">(860) 555-0199</a>
+        </div>
+        <dl class="contact-details">
+          <div>
+            <dt>Location</dt>
+            <dd>Connecticut, USA<br>Working with clients nationwide, remote-friendly</dd>
+          </div>
+          <div>
+            <dt>Response Time</dt>
+            <dd>Within 1–2 business days</dd>
+          </div>
+          <div>
+            <dt>Find Me Online</dt>
+            <dd class="social-links">
+              <a href="#">LinkedIn</a>
+              <a href="#">Instagram</a>
+              <a href="#">GitHub</a>
+            </dd>
+          </div>
+        </dl>
+      </aside>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div class="footer-brand">
+      <span class="brand-text">Foundry<span class="brand-text-accent">Web Lab</span></span>
+      <p>Web design &amp; development &middot; Connecticut, USA</p>
+    </div>
+    <nav class="footer-nav">
+      <a href="#home">Home</a>
+      <a href="#work">Work</a>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+  <div class="wrap footer-bottom">
+    <p>&copy; <span id="year"></span> Foundry Web Lab. All rights reserved. Placeholder content — replace before publishing.</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
