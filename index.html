@@ -248,7 +248,11 @@
         <h2 class="section-title">Start a Project</h2>
         <p class="contact-intro">Tell me a bit about your business and what you're looking for. I'll follow up within a day or two.</p>
 
-        <form id="quote-form" novalidate>
+        <form id="quote-form" name="quote-form" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+          <input type="hidden" name="form-name" value="quote-form">
+          <p style="display:none;" aria-hidden="true">
+            <label>Leave this field blank: <input name="bot-field" tabindex="-1" autocomplete="off"></label>
+          </p>
           <div class="form-row form-row-split">
             <div>
               <label for="name">Name</label>

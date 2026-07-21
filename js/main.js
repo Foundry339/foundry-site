@@ -21,10 +21,10 @@ if (navToggle && mainNav) {
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-// Contact form — front-end only placeholder.
-// This does NOT send an email. Hook it up to a form backend
-// (Formspree, Netlify Forms, your own API, etc.) before publishing —
-// see README.md for instructions.
+// Contact form — submits to Netlify Forms (data-netlify="true" on the form).
+// Netlify only detects/captures the form once this site is deployed on
+// Netlify; local dev and other hosts will get the "went wrong" message
+// below since there's nothing at "/" to receive the POST. See README.md.
 const quoteForm = document.getElementById('quote-form');
 const formNote = document.getElementById('form-note');
 
@@ -41,10 +41,22 @@ if (quoteForm && formNote) {
       return;
     }
 
-    // Placeholder success state — replace with a real submission
-    // (fetch() to Formspree/your API) once connected.
-    formNote.textContent = 'Thanks — this form is not yet connected to an email service. See README.md to hook it up.';
-    formNote.style.color = '#2DD4BF';
-    quoteForm.reset();
+    const body = new URLSearchParams(new FormData(quoteForm)).toString();
+
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body,
+    })
+      .then((res) => {
+        if (!res.ok) throw new Error('Form submission failed');
+        formNote.textContent = "Thanks — I'll follow up within 1-2 business days.";
+        formNote.style.color = '#2DD4BF';
+        quoteForm.reset();
+      })
+      .catch(() => {
+        formNote.textContent = 'Something went wrong sending your message — please email foundryweblab@gmail.com directly.';
+        formNote.style.color = '#FF3503';
+      });
   });
 }
