@@ -409,6 +409,7 @@ input:focus, select:focus, textarea:focus{ border-color: var(--color-teal); }
 /* =========================== FOOTER =========================== */
 .site-footer{ background: var(--color-surface-soft); border-top: 1px solid var(--color-border); padding-top: 46px; }
 .footer-inner{ display:flex; flex-wrap:wrap; justify-content:space-between; gap:24px; padding-bottom: 28px; border-bottom: 1px solid var(--color-border); }
+.footer-brand-row{ display:flex; align-items:center; gap:10px; }
 .footer-brand p{ font-size:0.85rem; margin-top:0.5em; }
 .footer-nav{ display:flex; gap:22px; flex-wrap:wrap; align-items:flex-start; }
 .footer-nav a{ color: var(--color-text-dim); text-decoration:none; font-size:0.9rem; }
