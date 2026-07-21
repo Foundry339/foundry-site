@@ -55,7 +55,7 @@ if (quoteForm && formNote) {
         quoteForm.reset();
       })
       .catch(() => {
-        formNote.textContent = 'Something went wrong sending your message — please email foundryweblab@gmail.com directly.';
+        formNote.textContent = 'Something went wrong sending your message — please email foundry339@gmail.com directly.';
         formNote.style.color = '#FF3503';
       });
   });

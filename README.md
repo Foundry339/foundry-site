@@ -8,7 +8,7 @@ After deploying, do this once in the Netlify dashboard to get submissions emaile
 
 1. Go to your site in Netlify → **Site configuration** → **Forms** → **Form notifications**.
 2. Click **Add notification** → **Email notification**.
-3. Set the notification email to `foundryweblab@gmail.com`.
+3. Set the notification email to `foundry339@gmail.com`.
 4. Save.
 
 Submissions will also always be visible under **Forms** in the Netlify dashboard, even before/without the email notification.
