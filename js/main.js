@@ -21,10 +21,8 @@ if (navToggle && mainNav) {
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-// Contact form — submits to Netlify Forms (data-netlify="true" on the form).
-// Netlify only detects/captures the form once this site is deployed on
-// Netlify; local dev and other hosts will get the "went wrong" message
-// below since there's nothing at "/" to receive the POST. See README.md.
+// Contact form — submits to Formspree (see the form's "action" attribute).
+// Works on any static host, including GitHub Pages, since Formspree is the backend.
 const quoteForm = document.getElementById('quote-form');
 const formNote = document.getElementById('form-note');
 
@@ -41,12 +39,10 @@ if (quoteForm && formNote) {
       return;
     }
 
-    const body = new URLSearchParams(new FormData(quoteForm)).toString();
-
-    fetch('/', {
+    fetch(quoteForm.action, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body,
+      headers: { Accept: 'application/json' },
+      body: new FormData(quoteForm),
     })
       .then((res) => {
         if (!res.ok) throw new Error('Form submission failed');

@@ -1,16 +1,9 @@
 # FWL_landing-page
 
-## Contact form (Netlify Forms)
+## Contact form (Formspree)
 
-The "Start a Project" form is wired up for [Netlify Forms](https://docs.netlify.com/manage/forms/setup/) — no extra account or API key needed, but it only works once this site is deployed on Netlify (Netlify detects the form at build time by scanning the static HTML for `data-netlify="true"`).
+The "Start a Project" form submits to [Formspree](https://formspree.io), which works on any static host, including GitHub Pages — no server backend needed on this end.
 
-After deploying, do this once in the Netlify dashboard to get submissions emailed to you:
+The form's endpoint is `https://formspree.io/f/meeyvqrg`, tied to `foundry339@gmail.com`. Submissions are emailed there and also viewable/exportable in the Formspree dashboard (useful if an email ever gets lost or spam-filtered). The free tier caps at 50 submissions/month.
 
-1. Go to your site in Netlify → **Site configuration** → **Forms** → **Form notifications**.
-2. Click **Add notification** → **Email notification**.
-3. Set the notification email to `foundry339@gmail.com`.
-4. Save.
-
-Submissions will also always be visible under **Forms** in the Netlify dashboard, even before/without the email notification.
-
-Locally (e.g. opening the file directly, or a non-Netlify host), the form will show a "Something went wrong" message since there's no Netlify backend to receive the POST — that's expected.
+The first submission to a brand-new Formspree form usually requires a one-time confirmation click sent to the recipient email — that's expected and only happens once.
