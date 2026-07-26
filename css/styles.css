@@ -326,13 +326,20 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   align-items:center;
 }
 .about-portrait{ color: var(--color-teal); text-align:center; }
+.portrait-photo{
+  width:70%;
+  height:auto;
+  margin:0 auto;
+  border-radius:4px;
+  object-fit:cover;
+}
 .portrait-caption{
   font-family: var(--font-mono);
   font-size:0.7rem;
   letter-spacing:0.08em;
   text-transform:uppercase;
-  color: var(--color-text-dim);
-  margin-top:0.6em;
+  color: var(--color-teal);
+  margin-top:0.8em;
 }
 .badge-row{ display:flex; flex-wrap:wrap; gap:10px; margin-top: 1.4em; }
 .badge{
@@ -391,14 +398,6 @@ input:focus, select:focus, textarea:focus{ border-color: var(--color-teal); }
   margin: 0.4em 0 0.3em;
 }
 .contact-email:hover{ color: var(--color-teal); }
-.contact-phone{
-  display:block;
-  font-family: var(--font-mono);
-  font-size:0.95rem;
-  color: var(--color-text-dim);
-  text-decoration:none;
-}
-.contact-phone:hover{ color: var(--color-orange); }
 .contact-details{ margin:0; padding: 24px 26px; display:grid; gap: 18px; }
 .contact-details dt{ font-family: var(--font-mono); font-size:0.7rem; letter-spacing:0.08em; text-transform:uppercase; color: var(--color-orange); margin-bottom:0.3em; }
 .contact-details dd{ margin:0; color: var(--color-text-dim); font-size:0.95rem; }
