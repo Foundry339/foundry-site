@@ -427,6 +427,8 @@ input:focus, select:focus, textarea:focus{ border-color: var(--color-teal); }
 .contact-details{ margin:0; padding: 24px 26px; display:grid; gap: 18px; }
 .contact-details dt{ font-family: var(--font-mono); font-size:0.7rem; letter-spacing:0.08em; text-transform:uppercase; color: var(--color-orange); margin-bottom:0.3em; }
 .contact-details dd{ margin:0; color: var(--color-text-dim); font-size:0.95rem; }
+.contact-details dd a{ color: var(--color-text-dim); text-decoration:none; }
+.contact-details dd a:hover{ color: var(--color-teal); }
 .social-links{ display:flex; gap:14px; }
 .social-links a{ color: var(--color-teal); text-decoration:none; font-size:0.9rem; }
 .social-links a:hover{ color: var(--color-orange); }
