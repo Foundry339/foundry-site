@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Foundry339 — Live Site QC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0F172A; --slate:#1E293B; --molten:#FF3503; --pale:#E5E7EB; --temper:#2DD4BF;
+    --grid-line: rgba(229,231,235,0.06);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:var(--slate); color:var(--pale); font-family:'Inter', sans-serif; line-height:1.5;
+    background-image:
+      linear-gradient(var(--grid-line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+    background-size: 40px 40px;
+    padding: 28px;
+  }
+  .qc-top{ display:flex; justify-content:space-between; align-items:center; margin-bottom:24px; flex-wrap:wrap; gap:14px; }
+  .qc-target{ font-family:'IBM Plex Mono', monospace; font-size:12px; color:#94A3B8; }
+  .qc-target span{color:var(--pale);}
+  h2{ font-family:'Archivo Black', sans-serif; font-size:16px; }
+  .rescan-btn{
+    font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.06em; text-transform:uppercase;
+    color:var(--ink); background: var(--temper); border:none; padding:10px 16px; border-radius:4px;
+    cursor:pointer; font-weight:600;
+  }
+  .gauges{ display:grid; grid-template-columns: repeat(4, 1fr); gap:14px; margin-bottom:28px; }
+  @media (max-width:480px){ .gauges{grid-template-columns: repeat(2, 1fr);} }
+  .gauge-card{ text-align:center; }
+  .gauge-svg{ width:88px; height:88px; }
+  .gauge-num{ font-family:'Archivo Black', sans-serif; font-size:20px; fill: var(--pale); transform: rotate(90deg); transform-origin: 60px 60px; }
+  .gauge-name{ font-family:'IBM Plex Mono', monospace; font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:#94A3B8; margin-top:6px; }
+  .checklist{ border-top:1px solid rgba(229,231,235,0.1); padding-top:18px; display:grid; grid-template-columns: 1fr 1fr; gap:8px 20px; }
+  @media (max-width:480px){ .checklist{grid-template-columns:1fr;} }
+  .check-row{ display:flex; align-items:center; gap:9px; font-size:12px; color:#94A3B8; font-family:'IBM Plex Mono', monospace; }
+  .dot{ width:7px; height:7px; border-radius:50%; flex-shrink:0; background:var(--temper); box-shadow:0 0 6px rgba(45,212,191,0.6); }
+  .dot.warn{ background:var(--molten); box-shadow:0 0 6px rgba(255,53,3,0.6); }
+</style>
+</head>
+<body>
+
+<div class="qc-top">
+  <div>
+    <div class="qc-target">Scanning <span>foundry339.com</span></div>
+    <h2 style="margin-top:6px;">A quality score, right on the page.</h2>
+  </div>
+  <button class="rescan-btn" id="rescanBtn">Re-scan site</button>
+</div>
+
+<div class="gauges" id="gauges">
+  <div class="gauge-card">
+    <svg class="gauge-svg" viewBox="0 0 120 120">
+      <circle cx="60" cy="60" r="52" fill="none" stroke="rgba(229,231,235,0.1)" stroke-width="10"/>
+      <circle class="gauge-ring" data-metric="performance" cx="60" cy="60" r="52" fill="none" stroke="#2DD4BF" stroke-width="10" stroke-linecap="round" stroke-dasharray="326.7" stroke-dashoffset="326.7" transform="rotate(-90 60 60)"/>
+      <text class="gauge-num" data-num="performance" x="60" y="66" text-anchor="middle">0</text>
+    </svg>
+    <div class="gauge-name">Performance</div>
+  </div>
+  <div class="gauge-card">
+    <svg class="gauge-svg" viewBox="0 0 120 120">
+      <circle cx="60" cy="60" r="52" fill="none" stroke="rgba(229,231,235,0.1)" stroke-width="10"/>
+      <circle class="gauge-ring" data-metric="accessibility" cx="60" cy="60" r="52" fill="none" stroke="#2DD4BF" stroke-width="10" stroke-linecap="round" stroke-dasharray="326.7" stroke-dashoffset="326.7" transform="rotate(-90 60 60)"/>
+      <text class="gauge-num" data-num="accessibility" x="60" y="66" text-anchor="middle">0</text>
+    </svg>
+    <div class="gauge-name">Accessibility</div>
+  </div>
+  <div class="gauge-card">
+    <svg class="gauge-svg" viewBox="0 0 120 120">
+      <circle cx="60" cy="60" r="52" fill="none" stroke="rgba(229,231,235,0.1)" stroke-width="10"/>
+      <circle class="gauge-ring" data-metric="practices" cx="60" cy="60" r="52" fill="none" stroke="#2DD4BF" stroke-width="10" stroke-linecap="round" stroke-dasharray="326.7" stroke-dashoffset="326.7" transform="rotate(-90 60 60)"/>
+      <text class="gauge-num" data-num="practices" x="60" y="66" text-anchor="middle">0</text>
+    </svg>
+    <div class="gauge-name">Best Practices</div>
+  </div>
+  <div class="gauge-card">
+    <svg class="gauge-svg" viewBox="0 0 120 120">
+      <circle cx="60" cy="60" r="52" fill="none" stroke="rgba(229,231,235,0.1)" stroke-width="10"/>
+      <circle class="gauge-ring" data-metric="seo" cx="60" cy="60" r="52" fill="none" stroke="#2DD4BF" stroke-width="10" stroke-linecap="round" stroke-dasharray="326.7" stroke-dashoffset="326.7" transform="rotate(-90 60 60)"/>
+      <text class="gauge-num" data-num="seo" x="60" y="66" text-anchor="middle">0</text>
+    </svg>
+    <div class="gauge-name">SEO</div>
+  </div>
+</div>
+
+<div class="checklist" id="checklist">
+  <div class="check-row"><span class="dot"></span> Images have alt text</div>
+  <div class="check-row"><span class="dot"></span> Color contrast passes WCAG AA</div>
+  <div class="check-row"><span class="dot"></span> Mobile viewport configured</div>
+  <div class="check-row"><span class="dot"></span> Compressed, lazy-loaded images</div>
+  <div class="check-row"><span class="dot warn"></span> Meta descriptions on all pages</div>
+  <div class="check-row"><span class="dot"></span> HTTPS enforced</div>
+</div>
+
+<script>
+  const CIRC = 326.7;
+  const gaugeTargets = { performance: 96, accessibility: 100, practices: 92, seo: 98 };
+
+  function animateGauges(targets){
+    Object.entries(targets).forEach(([key, target]) => {
+      const ring = document.querySelector(`.gauge-ring[data-metric="${key}"]`);
+      const num = document.querySelector(`.gauge-num[data-num="${key}"]`);
+      const color = target >= 90 ? '#2DD4BF' : '#FF3503';
+      ring.setAttribute('stroke', color);
+
+      let current = 0;
+      const duration = 900;
+      const start = performance.now();
+
+      function step(now){
+        const progress = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        current = Math.round(eased * target);
+        const offset = CIRC - (CIRC * current / 100);
+        ring.setAttribute('stroke-dashoffset', offset);
+        num.textContent = current;
+        if(progress < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    });
+  }
+
+  animateGauges(gaugeTargets);
+
+  document.getElementById('rescanBtn').addEventListener('click', () => {
+    const jittered = {};
+    Object.entries(gaugeTargets).forEach(([k,v]) => {
+      jittered[k] = Math.max(70, Math.min(100, v + Math.round((Math.random()-0.5) * 8)));
+    });
+    animateGauges(jittered);
+  });
+</script>
+
+</body>
+</html>

@@ -276,6 +276,31 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .portfolio-body h3{ font-size:1.1rem; margin-bottom:0.4em; color: var(--color-text); }
 .portfolio-body p{ font-size:0.92rem; margin-bottom:0.9em; }
 
+/* =========================== CUSTOM DESIGNS =========================== */
+.custom-grid{
+  display:grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+.custom-card{
+  background: var(--color-surface);
+  border:1px solid var(--color-border);
+  border-radius: var(--radius);
+  overflow:hidden;
+  transition: transform .18s ease, border-color .18s ease;
+}
+.custom-card:hover{ transform: translateY(-4px); border-color: var(--color-teal); }
+.custom-frame{ position:relative; }
+.custom-frame iframe{
+  display:block;
+  width:100%;
+  height: 420px;
+  border:none;
+}
+.custom-body{ padding: 22px 24px; }
+.custom-body h3{ font-size:1.1rem; margin-bottom:0.4em; color: var(--color-text); }
+.custom-body p{ font-size:0.92rem; margin-bottom:0; }
+
 /* Testimonials */
 .testimonial-grid{
   display:grid;
@@ -424,6 +449,7 @@ input:focus, select:focus, textarea:focus{ border-color: var(--color-teal); }
   .hero-visual{ order:1; height:240px; }
   .hero-actions, .hero-value-row{ justify-content:center; }
   .portfolio-grid{ grid-template-columns: 1fr; }
+  .custom-grid{ grid-template-columns: 1fr; }
   .services-grid{ grid-template-columns: repeat(2, 1fr); }
   .testimonial-grid{ grid-template-columns: 1fr; }
   .about-grid{ grid-template-columns:1fr; }

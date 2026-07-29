@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Foundry339 — Case Study Slider</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0F172A; --slate:#1E293B; --molten:#FF3503; --pale:#E5E7EB; --temper:#2DD4BF;
+    --grid-line: rgba(229,231,235,0.06);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html,body{height:100%;}
+  body{
+    background:var(--slate);
+    color:var(--pale);
+    font-family:'Inter', sans-serif;
+    line-height:1.5;
+    background-image:
+      linear-gradient(var(--grid-line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+    background-size: 40px 40px;
+    padding: 28px;
+    overflow:hidden;
+  }
+  .section-tag{
+    font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.12em;
+    text-transform:uppercase; color:#64748B; margin-bottom:8px;
+  }
+  h2{ font-family:'Archivo Black', sans-serif; font-size:20px; margin-bottom:16px; max-width:520px; }
+  .slider-frame{
+    position:relative; width:100%; aspect-ratio: 16/9; max-height:280px;
+    border-radius:6px; overflow:hidden; border:1px solid rgba(229,231,235,0.14);
+    cursor:ew-resize; background:#161c29;
+  }
+  .layer{ position:absolute; inset:0; display:flex; flex-direction:column; align-items:flex-start; justify-content:flex-end; padding:20px; }
+  .layer.before{ background: repeating-linear-gradient(135deg, #2b2f38, #2b2f38 12px, #262a32 12px, #262a32 24px); z-index:1; }
+  .layer.after{ background: linear-gradient(160deg, #0F172A 0%, #12212b 60%, #0d2b28 100%); clip-path: inset(0 0 0 50%); z-index:2; }
+  .layer .label{ font-family:'IBM Plex Mono', monospace; font-size:10px; letter-spacing:0.1em; text-transform:uppercase; padding:4px 9px; border-radius:3px; margin-bottom:8px; }
+  .layer.before .label{background:rgba(255,255,255,0.08); color:#94A3B8;}
+  .layer.after .label{background:rgba(45,212,191,0.15); color:var(--temper);}
+  .layer h3{ font-family:'Inter', sans-serif; font-weight:700; font-size:16px; margin-bottom:4px; }
+  .layer.before h3{color:#64748B; font-weight:600;}
+  .layer.after h3{color:var(--pale);}
+  .layer .stats{ display:flex; gap:16px; font-family:'IBM Plex Mono', monospace; font-size:12px; color:#64748B; margin-top:6px; }
+  .layer.after .stats{color:#5EEAD4;}
+  .handle{ position:absolute; top:0; bottom:0; left:50%; width:2px; background:var(--molten); z-index:3; transform:translateX(-1px); box-shadow:0 0 12px rgba(255,53,3,0.5); }
+  .handle-grip{ position:absolute; top:50%; left:50%; width:36px; height:36px; transform:translate(-50%,-50%); background:var(--molten); border-radius:50%; display:flex; align-items:center; justify-content:center; font-family:'IBM Plex Mono', monospace; color:var(--ink); font-size:13px; font-weight:600; box-shadow:0 0 0 6px rgba(255,53,3,0.15); }
+  .slider-caption{ display:flex; justify-content:space-between; margin-top:12px; font-family:'IBM Plex Mono', monospace; font-size:11px; color:#64748B; }
+</style>
+</head>
+<body>
+
+<div class="section-tag">Case Study Slider</div>
+<h2>Drag the line. See the difference.</h2>
+
+<div class="slider-frame" id="sliderFrame">
+  <div class="layer before">
+    <div class="label">Before</div>
+    <h3>Template, unmaintained</h3>
+    <div class="stats"><span>Load: 4.8s</span><span>Mobile: 61</span></div>
+  </div>
+  <div class="layer after" id="afterLayer">
+    <div class="label">After — Foundry339</div>
+    <h3>Rebuilt, hand-coded</h3>
+    <div class="stats"><span>Load: 0.9s</span><span>Mobile: 98</span></div>
+  </div>
+  <div class="handle" id="handle">
+    <div class="handle-grip">↔</div>
+  </div>
+</div>
+<div class="slider-caption">
+  <span>Drag anywhere on the frame</span>
+  <span>Client: local service business</span>
+</div>
+
+<script>
+  const frame = document.getElementById('sliderFrame');
+  const after = document.getElementById('afterLayer');
+  const handle = document.getElementById('handle');
+  let dragging = false;
+
+  function setSlide(clientX){
+    const rect = frame.getBoundingClientRect();
+    let pct = ((clientX - rect.left) / rect.width) * 100;
+    pct = Math.max(0, Math.min(100, pct));
+    after.style.clipPath = `inset(0 0 0 ${pct}%)`;
+    handle.style.left = `${pct}%`;
+  }
+
+  frame.addEventListener('mousedown', e => { dragging = true; setSlide(e.clientX); });
+  window.addEventListener('mousemove', e => { if(dragging) setSlide(e.clientX); });
+  window.addEventListener('mouseup', () => dragging = false);
+  frame.addEventListener('touchstart', e => setSlide(e.touches[0].clientX));
+  frame.addEventListener('touchmove', e => setSlide(e.touches[0].clientX));
+</script>
+
+</body>
+</html>

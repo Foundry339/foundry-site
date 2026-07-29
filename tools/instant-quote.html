@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Foundry339 — Instant Estimate</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0F172A; --slate:#1E293B; --molten:#FF3503; --pale:#E5E7EB; --temper:#2DD4BF;
+    --grid-line: rgba(229,231,235,0.06);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:var(--slate); color:var(--pale); font-family:'Inter', sans-serif; line-height:1.5;
+    background-image:
+      linear-gradient(var(--grid-line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+    background-size: 40px 40px;
+    padding: 28px;
+  }
+  .section-tag{ font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:#64748B; margin-bottom:8px; }
+  h2{ font-family:'Archivo Black', sans-serif; font-size:20px; margin-bottom:20px; max-width:520px; }
+  .quote-grid{ display:grid; grid-template-columns: 1.1fr 0.9fr; gap:32px; }
+  @media (max-width:520px){ .quote-grid{grid-template-columns:1fr;} }
+  .field-group{margin-bottom:20px;}
+  .field-label{ font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:#94A3B8; margin-bottom:10px; display:block; }
+  .pill-row{display:flex; flex-wrap:wrap; gap:8px;}
+  .pill{
+    font-family:'Inter', sans-serif; font-size:13px; padding:8px 14px; border-radius:4px;
+    border:1px solid rgba(229,231,235,0.18); background:transparent; color:var(--pale);
+    cursor:pointer; transition: border-color .15s ease, background .15s ease, color .15s ease;
+  }
+  .pill:hover{border-color:var(--temper);}
+  .pill.active{ background:var(--temper); border-color:var(--temper); color:var(--ink); font-weight:600; }
+  input[type=range]{ width:100%; accent-color: var(--molten); margin-top:6px; }
+  .estimate-box{
+    border:1px solid rgba(255,53,3,0.3); border-radius:6px; padding:22px;
+    background: radial-gradient(circle at 30% 20%, rgba(255,53,3,0.08), transparent 60%);
+    text-align:left; display:flex; flex-direction:column; justify-content:space-between; min-height:100%;
+  }
+  .estimate-label{ font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:#94A3B8; margin-bottom:8px; }
+  .estimate-value{ font-family:'Archivo Black', sans-serif; font-size:clamp(24px,5vw,32px); color:var(--molten); line-height:1; margin-bottom:8px; transition: opacity .1s ease; }
+  .estimate-sub{ font-size:12px; color:#64748B; margin-bottom:18px; }
+  .cta-button{
+    font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.06em; text-transform:uppercase;
+    color:var(--ink); background: var(--molten); border:none; padding:12px 18px; border-radius:4px;
+    cursor:pointer; font-weight:600; align-self:flex-start;
+  }
+</style>
+</head>
+<body>
+
+<div class="section-tag">Instant Estimate</div>
+<h2>A number before the first email.</h2>
+
+<div class="quote-grid">
+  <div>
+    <div class="field-group">
+      <span class="field-label">Site type</span>
+      <div class="pill-row" id="siteType">
+        <button class="pill active" data-value="1">Landing page</button>
+        <button class="pill" data-value="2.2">Multi-page site</button>
+        <button class="pill" data-value="3.6">E-commerce</button>
+      </div>
+    </div>
+
+    <div class="field-group">
+      <span class="field-label">Pages needed: <span id="pagesOut">5</span></span>
+      <input type="range" min="1" max="20" value="5" id="pagesRange">
+    </div>
+
+    <div class="field-group">
+      <span class="field-label">Add-ons</span>
+      <div class="pill-row" id="addons">
+        <button class="pill" data-value="600">CMS editing</button>
+        <button class="pill" data-value="450">Custom animation</button>
+        <button class="pill" data-value="350">SEO setup</button>
+        <button class="pill" data-value="500">Booking / forms</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="estimate-box">
+    <div>
+      <div class="estimate-label">Estimated range</div>
+      <div class="estimate-value" id="estimateValue">$1,800–$2,400</div>
+      <div class="estimate-sub" id="estimateSub">Landing page · 5 pages · no add-ons</div>
+    </div>
+    <button class="cta-button">Request exact quote →</button>
+  </div>
+</div>
+
+<script>
+  const siteTypeButtons = document.querySelectorAll('#siteType .pill');
+  const addonButtons = document.querySelectorAll('#addons .pill');
+  const pagesRange = document.getElementById('pagesRange');
+  const pagesOut = document.getElementById('pagesOut');
+  const estimateValue = document.getElementById('estimateValue');
+  const estimateSub = document.getElementById('estimateSub');
+
+  const BASE = 900;
+  const PER_PAGE = 140;
+
+  function currentSiteType(){
+    const active = document.querySelector('#siteType .pill.active');
+    return { mult: parseFloat(active.dataset.value), label: active.textContent };
+  }
+
+  function activeAddons(){
+    const active = [...addonButtons].filter(b => b.classList.contains('active'));
+    return {
+      total: active.reduce((sum, b) => sum + parseFloat(b.dataset.value), 0),
+      labels: active.map(b => b.textContent)
+    };
+  }
+
+  function recalc(){
+    const { mult, label } = currentSiteType();
+    const pages = parseInt(pagesRange.value);
+    const addons = activeAddons();
+
+    const base = (BASE + pages * PER_PAGE) * mult + addons.total;
+    const low = Math.round(base * 0.92 / 50) * 50;
+    const high = Math.round(base * 1.18 / 50) * 50;
+
+    estimateValue.style.opacity = 0;
+    setTimeout(() => {
+      estimateValue.textContent = `$${low.toLocaleString()}–$${high.toLocaleString()}`;
+      estimateValue.style.opacity = 1;
+    }, 90);
+
+    const addonText = addons.labels.length ? addons.labels.join(', ') : 'no add-ons';
+    estimateSub.textContent = `${label} · ${pages} pages · ${addonText}`;
+  }
+
+  siteTypeButtons.forEach(btn => btn.addEventListener('click', () => {
+    siteTypeButtons.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    recalc();
+  }));
+
+  addonButtons.forEach(btn => btn.addEventListener('click', () => {
+    btn.classList.toggle('active');
+    recalc();
+  }));
+
+  pagesRange.addEventListener('input', () => {
+    pagesOut.textContent = pagesRange.value;
+    recalc();
+  });
+
+  recalc();
+</script>
+
+</body>
+</html>
