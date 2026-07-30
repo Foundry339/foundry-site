@@ -21,7 +21,7 @@ if (navToggle && mainNav) {
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-// Contact form — submits to Formspree (see the form's "action" attribute).
+// Contact form - submits to Formspree (see the form's "action" attribute).
 // Works on any static host, including GitHub Pages, since Formspree is the backend.
 const quoteForm = document.getElementById('quote-form');
 const formNote = document.getElementById('form-note');
@@ -46,12 +46,12 @@ if (quoteForm && formNote) {
     })
       .then((res) => {
         if (!res.ok) throw new Error('Form submission failed');
-        formNote.textContent = "Thanks — I'll follow up within 1-2 business days.";
+        formNote.textContent = "Thanks. I'll follow up within 1-2 business days.";
         formNote.style.color = '#2DD4BF';
         quoteForm.reset();
       })
       .catch(() => {
-        formNote.textContent = 'Something went wrong sending your message — please email foundry339@gmail.com directly.';
+        formNote.textContent = 'Something went wrong sending your message. Please email foundry339@gmail.com directly.';
         formNote.style.color = '#FF3503';
       });
   });
