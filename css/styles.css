@@ -271,6 +271,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .portfolio-thumb-3{ background: linear-gradient(135deg, #2DD4BF33, #FF350322); }
 .portfolio-thumb-4{ background: linear-gradient(135deg, #1E293B, #2DD4BF22); }
 .portfolio-thumb-5{ background: linear-gradient(135deg, #FF350333, #2DD4BF22); }
+.portfolio-thumb-6{ background: linear-gradient(135deg, #0F172A, #FF350333); }
 .portfolio-body{ padding: 22px 24px; }
 .portfolio-tag{ font-family: var(--font-mono); font-size:0.7rem; letter-spacing:0.05em; text-transform:uppercase; color: var(--color-orange); margin-bottom:0.6em; }
 .portfolio-body h3{ font-size:1.1rem; margin-bottom:0.4em; color: var(--color-text); }
