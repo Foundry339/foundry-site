@@ -61,8 +61,8 @@
       <span class="field-label">Site type</span>
       <div class="pill-row" id="siteType">
         <button class="pill active" data-value="1">Landing page</button>
-        <button class="pill" data-value="2.2">Multi-page site</button>
-        <button class="pill" data-value="3.6">E-commerce</button>
+        <button class="pill" data-value="1.5">Multi-page site</button>
+        <button class="pill" data-value="2.2">E-commerce</button>
       </div>
     </div>
 
@@ -74,10 +74,10 @@
     <div class="field-group">
       <span class="field-label">Add-ons</span>
       <div class="pill-row" id="addons">
-        <button class="pill" data-value="600">CMS editing</button>
+        <button class="pill" data-value="200">Custom logo</button>
         <button class="pill" data-value="450">Custom animation</button>
         <button class="pill" data-value="350">SEO setup</button>
-        <button class="pill" data-value="500">Booking / forms</button>
+        <button class="pill" data-value="300">Booking / forms</button>
       </div>
     </div>
   </div>
@@ -85,7 +85,7 @@
   <div class="estimate-box">
     <div>
       <div class="estimate-label">Estimated range</div>
-      <div class="estimate-value" id="estimateValue">$1,800-$2,400</div>
+      <div class="estimate-value" id="estimateValue">$1,400-$1,750</div>
       <div class="estimate-sub" id="estimateSub">Landing page · 5 pages · no add-ons</div>
     </div>
     <button class="cta-button">Request exact quote →</button>
@@ -101,7 +101,7 @@
   const estimateSub = document.getElementById('estimateSub');
 
   const BASE = 900;
-  const PER_PAGE = 140;
+  const PER_PAGE = 120;
 
   function currentSiteType(){
     const active = document.querySelector('#siteType .pill.active');
