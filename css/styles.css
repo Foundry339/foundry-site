@@ -418,8 +418,10 @@ input:focus, select:focus, textarea:focus{ border-color: var(--color-teal); }
 .footer-nav{ display:flex; gap:22px; flex-wrap:wrap; align-items:flex-start; }
 .footer-nav a{ color: var(--color-text-dim); text-decoration:none; font-size:0.9rem; }
 .footer-nav a:hover{ color: var(--color-orange); }
-.footer-bottom{ padding: 18px 24px 26px; font-size:0.78rem; color: var(--color-text-dim); }
+.footer-bottom{ padding: 18px 24px 26px; font-size:0.78rem; color: var(--color-text-dim); display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; }
 .footer-bottom p{ margin:0; }
+.footer-bottom a{ color: var(--color-text-dim); text-decoration:none; }
+.footer-bottom a:hover{ color: var(--color-orange); }
 
 /* =========================== RESPONSIVE =========================== */
 @media (max-width: 960px){
