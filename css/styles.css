@@ -303,31 +303,6 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .custom-body h3{ font-size:1.1rem; margin-bottom:0.4em; color: var(--color-text); }
 .custom-body p{ font-size:0.92rem; margin-bottom:0; }
 
-/* Testimonials */
-.testimonial-grid{
-  display:grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-.testimonial-card{
-  margin:0;
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-top: 3px solid var(--color-teal);
-  border-radius: var(--radius);
-  padding: 28px 24px 22px;
-}
-.quote-mark{
-  font-family: var(--font-display);
-  font-size: 2.6rem;
-  line-height:1;
-  color: var(--color-orange);
-  display:block;
-  margin-bottom: 0.1em;
-}
-.testimonial-card p{ font-style: italic; font-size:0.95rem; }
-.testimonial-card footer{ font-family: var(--font-mono); font-size:0.76rem; color: var(--color-text-dim); }
-
 /* =========================== SERVICES =========================== */
 .services-grid{
   display:grid;
@@ -455,7 +430,6 @@ input:focus, select:focus, textarea:focus{ border-color: var(--color-teal); }
   .portfolio-grid{ grid-template-columns: 1fr; }
   .custom-grid{ grid-template-columns: 1fr; }
   .services-grid{ grid-template-columns: repeat(2, 1fr); }
-  .testimonial-grid{ grid-template-columns: 1fr; }
   .about-grid{ grid-template-columns:1fr; }
   .about-portrait{ max-width:220px; margin:0 auto; }
   .contact-grid{ grid-template-columns:1fr; }
