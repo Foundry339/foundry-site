@@ -427,7 +427,7 @@ input:focus, select:focus, textarea:focus{ border-color: var(--color-teal); }
 @media (max-width: 960px){
   .hero-inner{ grid-template-columns: 1fr; text-align:center; }
   .hero-copy{ order:2; }
-  .hero-visual{ order:1; height:240px; }
+  .hero-visual{ order:1; height:240px; overflow:hidden; }
   .hero-actions, .hero-value-row{ justify-content:center; }
   .portfolio-grid{ grid-template-columns: 1fr; }
   .custom-grid{ grid-template-columns: 1fr; }
