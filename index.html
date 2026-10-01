@@ -3,14 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Foundry339</title>
+<meta name="robots" content="index, follow, max-image-preview:large">
+<title>Foundry339 | Web Design &amp; Development</title>
 <meta name="description" content="Foundry339 designs and builds websites that turn visitors into customers. Web design, development, branding, and SEO - based in Connecticut, working with clients everywhere.">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Foundry339">
 <meta property="og:title" content="Foundry339 - Websites that turn visitors into customers">
 <meta property="og:description" content="Foundry339 designs and builds websites that turn visitors into customers. Web design, development, branding, and SEO - based in Connecticut, working with clients everywhere.">
-<meta property="og:url" content="https://foundry339.com">
+<meta property="og:url" content="https://foundry339.com/">
+<meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://foundry339.com/img/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -33,23 +35,57 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "Foundry339",
-  "image": "https://foundry339.com/img/og-image.jpg",
-  "url": "https://foundry339.com",
-  "telephone": "+12036892618",
-  "email": "foundry339@gmail.com",
-  "description": "Foundry339 designs and builds websites that turn visitors into customers. Web design, development, branding, and SEO - based in Connecticut, working with clients everywhere.",
-  "address": {
-    "@type": "PostalAddress",
-    "addressRegion": "CT",
-    "addressCountry": "US"
-  },
-  "areaServed": "Worldwide",
-  "sameAs": [
-    "https://www.linkedin.com/in/andre-celestino-69a102426",
-    "https://www.instagram.com/foundry339/",
-    "https://github.com/Foundry339/"
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://foundry339.com/#website",
+      "url": "https://foundry339.com/",
+      "name": "Foundry339",
+      "publisher": { "@id": "https://foundry339.com/#business" }
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://foundry339.com/#business",
+      "name": "Foundry339",
+      "url": "https://foundry339.com/",
+      "logo": "https://foundry339.com/img/foundry339-logo.svg",
+      "image": "https://foundry339.com/img/og-image.jpg",
+      "telephone": "+12036892618",
+      "email": "foundry339@gmail.com",
+      "description": "Foundry339 designs and builds websites that turn visitors into customers. Web design, development, branding, and SEO - based in Connecticut, working with clients everywhere.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressRegion": "CT",
+        "addressCountry": "US"
+      },
+      "areaServed": [
+        { "@type": "State", "name": "Connecticut" },
+        { "@type": "Country", "name": "United States" }
+      ],
+      "founder": {
+        "@type": "Person",
+        "name": "Andre Celestino",
+        "sameAs": "https://www.linkedin.com/in/andre-celestino-69a102426"
+      },
+      "knowsAbout": ["Web design", "Web development", "Search engine optimization", "Branding", "Conversion optimization"],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Foundry339 Services",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Web Design", "description": "Custom, mobile-first website designs built around how customers browse and decide." } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Web Development", "description": "Clean, fast, maintainable code from a simple static site to a fully custom build." } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SEO & Traffic Growth", "description": "On-page SEO, site speed, and structure that help the right people find you on search." } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Branding & Graphic Design", "description": "Logos, color systems, and visual identity that stay consistent everywhere." } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Website Maintenance", "description": "Ongoing updates, backups, and small fixes so your site stays fast and secure." } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Conversion Optimization", "description": "Landing pages and layouts tuned to turn more visits into calls, bookings, and sales." } }
+        ]
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/andre-celestino-69a102426",
+        "https://www.instagram.com/foundry339/",
+        "https://github.com/Foundry339/"
+      ]
+    }
   ]
 }
 </script>
@@ -138,7 +174,7 @@
 
         <article class="portfolio-card">
           <div class="portfolio-thumb portfolio-thumb-3">
-            <img src="img/portfolio-turkeats.jpg" alt="New York Turk Eats site screenshot" loading="lazy" width="800" height="500">
+            <img src="img/portfolio-turkeats.jpg" alt="Screenshot of the New York Turk Eats website, designed and built by Foundry339" loading="lazy" width="800" height="500">
             <div class="browser-chrome browser-chrome-small"><span></span><span></span><span></span></div>
           </div>
           <div class="portfolio-body">
@@ -151,7 +187,7 @@
 
         <article class="portfolio-card">
           <div class="portfolio-thumb portfolio-thumb-6">
-            <img src="img/portfolio-siteworthy.jpg" alt="Site Worthy site screenshot" loading="lazy" width="800" height="500">
+            <img src="img/portfolio-siteworthy.jpg" alt="Screenshot of the Site Worthy website, designed and built by Foundry339" loading="lazy" width="800" height="500">
             <div class="browser-chrome browser-chrome-small"><span></span><span></span><span></span></div>
           </div>
           <div class="portfolio-body">
@@ -164,7 +200,7 @@
 
         <article class="portfolio-card">
           <div class="portfolio-thumb portfolio-thumb-4">
-            <img src="img/portfolio-corliss.jpg" alt="Corliss Wines site screenshot" loading="lazy" width="800" height="500">
+            <img src="img/portfolio-corliss.jpg" alt="Screenshot of the Corliss Wines website, designed and built by Foundry339" loading="lazy" width="800" height="500">
             <div class="browser-chrome browser-chrome-small"><span></span><span></span><span></span></div>
           </div>
           <div class="portfolio-body">
@@ -177,7 +213,7 @@
 
         <article class="portfolio-card">
           <div class="portfolio-thumb portfolio-thumb-5">
-            <img src="img/portfolio-handturkey.jpg" alt="HandTurkey Story Warz database site screenshot" loading="lazy" width="800" height="500">
+            <img src="img/portfolio-handturkey.jpg" alt="Screenshot of the HandTurkey Story Warz database website, designed and built by Foundry339" loading="lazy" width="800" height="500">
             <div class="browser-chrome browser-chrome-small"><span></span><span></span><span></span></div>
           </div>
           <div class="portfolio-body">
@@ -190,7 +226,7 @@
 
         <article class="portfolio-card">
           <div class="portfolio-thumb portfolio-thumb-7">
-            <img src="img/portfolio-aegisstandard.jpg" alt="Aegis Standard site screenshot" loading="lazy" width="800" height="500">
+            <img src="img/portfolio-aegisstandard.jpg" alt="Screenshot of the Aegis Standard website, designed and built by Foundry339" loading="lazy" width="800" height="500">
             <div class="browser-chrome browser-chrome-small"><span></span><span></span><span></span></div>
           </div>
           <div class="portfolio-body">
@@ -203,7 +239,7 @@
 
         <article class="portfolio-card">
           <div class="portfolio-thumb portfolio-thumb-8">
-            <img src="img/portfolio-fruityfru.jpg" alt="FruityFru site screenshot" loading="lazy" width="800" height="500">
+            <img src="img/portfolio-fruityfru.jpg" alt="Screenshot of the FruityFru website, designed and built by Foundry339" loading="lazy" width="800" height="500">
             <div class="browser-chrome browser-chrome-small"><span></span><span></span><span></span></div>
           </div>
           <div class="portfolio-body">
@@ -216,7 +252,7 @@
 
         <article class="portfolio-card">
           <div class="portfolio-thumb portfolio-thumb-1">
-            <img src="img/portfolio-tavolavigne.jpg" alt="Tavola & Vigne Ristorante site screenshot" loading="lazy" width="800" height="500">
+            <img src="img/portfolio-tavolavigne.jpg" alt="Screenshot of the Tavola & Vigne Ristorante website, designed and built by Foundry339" loading="lazy" width="800" height="500">
             <div class="browser-chrome browser-chrome-small"><span></span><span></span><span></span></div>
           </div>
           <div class="portfolio-body">
@@ -229,7 +265,7 @@
 
         <article class="portfolio-card">
           <div class="portfolio-thumb portfolio-thumb-2">
-            <img src="img/portfolio-ironclad.jpg" alt="Ironclad Plumbing Co. site screenshot" loading="lazy" width="800" height="500">
+            <img src="img/portfolio-ironclad.jpg" alt="Screenshot of the Ironclad Plumbing Co. website, designed and built by Foundry339" loading="lazy" width="800" height="500">
             <div class="browser-chrome browser-chrome-small"><span></span><span></span><span></span></div>
           </div>
           <div class="portfolio-body">
@@ -353,7 +389,7 @@
   <section class="section" id="about">
     <div class="wrap about-grid">
       <div class="about-portrait">
-        <img src="img/founder-headshot.jpeg" alt="Founder of Foundry339" class="portrait-photo" width="1500" height="2100">
+        <img src="img/founder-headshot.jpeg" alt="Andre Celestino, founder of Foundry339" class="portrait-photo" width="1500" height="2100">
         <p class="portrait-caption">Andre Celestino</p>
       </div>
 
